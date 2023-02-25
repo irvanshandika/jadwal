@@ -1,49 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jadwal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" href="./img/ico/icons8-microsoft-onenote-2019-96.png" />
+    <link rel="icon" type="image/png" href="./img/ico/icons8-microsoft-onenote-2019-96.png" />
+    <title>Jadwal Pemrograman 4</title>
   </head>
   <body>
-    <h1 class="awalan text-center">Jadwal Semester 4 <br />2022/2023</h1>
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-md-3">
-          <p class="hari">Senin</p>
-          <img src="./img/comingsoon.png" width="150vw" alt="Coming Soon" />
-        </div>
-        <div class="col-md-3">
-          <p class="hari">Selasa</p>
-          <img src="./img/comingsoon.png" width="150vw" alt="Coming Soon" />
-        </div>
-        <div class="col-md-3">
-          <p class="hari">Rabu</p>
-          <img src="./img/comingsoon.png" width="150vw" alt="Coming Soon" />
-        </div>
-        <div class="col-md-3">
-          <p class="hari">Kamis</p>
-          <img src="./img/comingsoon.png" width="150vw" alt="Coming Soon" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <p class="hari">Jum'at</p>
-          <img src="./img/comingsoon.png" width="150vw" alt="Coming Soon" />
-        </div>
-        <div class="col-md-4">
-          <p class="hari">Sabtu</p>
-          <img src="./img/comingsoon.png" width="150vw" alt="Coming Soon" />
-        </div>
-      </div>
+    <h1 class="judul">Jadwal Kuliah Kelas Pemrograman 4</h1>
+    <div class="container">
+      <!-- <button id="mode-toggle">Toggle Mode</button> -->
+      <label class="switch">
+        <input type="checkbox" id="mode-toggle" />
+        <span class="slider"></span>
+      </label>
+      <table>
+        <thead>
+          <tr>
+            <th>Hari</th>
+            <th>Waktu</th>
+            <th>Mata Kuliah</th>
+            <th>Ruangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Senin</td>
+            <td>08.00 - 10.00</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Selasa</td>
+            <td>10.00 - 12.00</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Rabu</td>
+            <td>13.00 - 15.00</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Kamis</td>
+            <td>08.00 - 10.00</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Jumat</td>
+            <td>10.00 - 12.00</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Sabtu</td>
+            <td>08.00 - 10.00</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1 style="text-align: center">Jadwal Pengganti</h1>
+      <form id="form-jadwal">
+        <label for="nama-matkul">Nama Mata Kuliah</label>
+        <input type="text" id="nama-matkul" name="nama-matkul" required />
+
+        <label for="hari">Hari</label>
+        <select id="hari" name="hari" required>
+          <option value="">Pilih hari</option>
+          <option value="Senin">Senin</option>
+          <option value="Selasa">Selasa</option>
+          <option value="Rabu">Rabu</option>
+          <option value="Kamis">Kamis</option>
+          <option value="Jumat">Jumat</option>
+          <option value="Sabtu">Sabtu</option>
+        </select>
+
+        <label for="jam-mulai">Jam Mulai</label>
+        <input type="time" id="jam-mulai" name="jam-mulai" required />
+
+        <label for="jam-selesai">Jam Selesai</label>
+        <input type="time" id="jam-selesai" name="jam-selesai" required />
+
+        <button type="submit">Tambah</button>
+      </form>
+      <table id="tabel-jadwal">
+        <thead>
+          <tr>
+            <th>Nama Mata Kuliah</th>
+            <th>Hari</th>
+            <th>Jam Mulai</th>
+            <th>Jam Selesai</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
-    <footer>
-      <p>Created with <i class="bi bi-heart-fill" style="color: red"></i> by <a href="https://www.instagram.com/irvan_shandika" style="text-decoration: none; color: black">Irvan Shandika</a></p>
-    </footer>
+    <button onclick="cetakPDF()" class="cetak">Cetak PDF</button>
     <script src="./script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>

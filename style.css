@@ -1,28 +1,192 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
-@import url("https://fonts.cdnfonts.com/css/-133");
-@font-face {
-  font-family: "Manly";
-  src: url(./fonts/Manly.ttf);
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+body.dark {
+  background-color: #333;
+  color: #f0f0f0;
 }
 
-body {
-  background: url("https://images.unsplash.com/photo-1476108621677-3c620901b5e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+button.dark {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input:hover {
+  background-color: #666;
+}
+
+.judul {
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+input:checked + .slider {
+  background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+
+th,
+td {
   color: black;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
 }
-.awalan {
-  padding: 3rem 6rem;
-  font-family: "Mintsoda - Lime Green 16x16", sans-serif;
+
+th {
+  background-color: #008cba;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
 }
-.hari {
-  font-family: "Manly";
-  font-size: 50px;
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
-footer {
-  padding-top: 1rem;
+
+.cetak {
+  background-color: #008cba;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.cetak:hover {
+  background-color: #005d82;
+}
+/* Form */
+.form-input {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-input label {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
+}
+
+.form-input input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-input input:focus {
+  outline: none;
+  border-color: #37a3f1;
+  box-shadow: 0 0 0 2px #37a3f1;
+}
+
+.form-input select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-input select:focus {
+  outline: none;
+  border-color: #37a3f1;
+  box-shadow: 0 0 0 2px #37a3f1;
+}
+
+.form-input button {
+  padding: 8px 16px;
+  background-color: #37a3f1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.form-input button:hover {
+  background-color: #2099d1;
+}
+
+.form-input button:active {
+  background-color: #106ba3;
 }
