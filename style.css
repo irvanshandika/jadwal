@@ -19,7 +19,7 @@ button.dark {
   padding: 2rem;
 }
 
-input {
+.cek {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   background-color: #333;
@@ -29,7 +29,7 @@ input {
   cursor: pointer;
 }
 
-input:hover {
+.cek:hover {
   background-color: #666;
 }
 
@@ -134,59 +134,71 @@ tr:nth-child(even) {
   background-color: #005d82;
 }
 /* Form */
-.form-input {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
+.jadwal {
+  margin: 0 auto;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-.form-input label {
-  margin-bottom: 4px;
-  font-size: 14px;
+.jadwal label {
+  display: block;
+  margin-bottom: 5px;
   font-weight: bold;
-  color: #222;
 }
 
-.form-input input {
-  padding: 8px 12px;
+.jadwal input[type="text"] {
+  width: 40%;
+  padding: 8px;
+  border-radius: 3px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: 10px;
+  background: #e0e0e0;
 }
 
-.form-input input:focus {
-  outline: none;
-  border-color: #37a3f1;
-  box-shadow: 0 0 0 2px #37a3f1;
-}
-
-.form-input select {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.form-input select:focus {
-  outline: none;
-  border-color: #37a3f1;
-  box-shadow: 0 0 0 2px #37a3f1;
-}
-
-.form-input button {
-  padding: 8px 16px;
-  background-color: #37a3f1;
+.jadwal input[type="submit"] {
+  background-color: #4caf50;
   color: #fff;
   border: none;
-  border-radius: 4px;
-  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 3px;
   cursor: pointer;
 }
 
-.form-input button:hover {
-  background-color: #2099d1;
+.jadwal input[type="submit"]:hover {
+  background-color: #3e8e41;
 }
 
-.form-input button:active {
-  background-color: #106ba3;
+.jadwal-edit {
+  display: none;
+}
+
+.jadwal-delete {
+  text-align: right;
+}
+
+.jadwal-delete input[type="button"] {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.jadwal-delete input[type="button"]:hover {
+  background-color: #c62828;
+  transition: all 0.3s ease;
+}
+/* Tabel */
+.tabel {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }

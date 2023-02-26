@@ -11,6 +11,10 @@ toggleButton.addEventListener("click", () => {
 });
 
 let dataJadwal = [];
+const dataJadwalLocalStorage = localStorage.getItem("dataJadwal");
+if (dataJadwalLocalStorage) {
+  dataJadwal = JSON.parse(dataJadwalLocalStorage);
+}
 const formJadwal = document.querySelector("#form-jadwal");
 
 formJadwal.addEventListener("submit", function (e) {
@@ -21,19 +25,20 @@ formJadwal.addEventListener("submit", function (e) {
   const jamMulai = document.querySelector("#jam-mulai").value;
   const jamSelesai = document.querySelector("#jam-selesai").value;
 
-  const jadwal = {
+  dataJadwal.push({
     namaMatkul,
     hari,
     jamMulai,
     jamSelesai,
-  };
-
-  dataJadwal.push(jadwal);
+  });
+  localStorage.setItem("dataJadwal", JSON.stringify(dataJadwal));
   formJadwal.reset();
 
   displayDataJadwal();
 });
 function displayDataJadwal() {
+  const data = localStorage.getItem("dataJadwal");
+  const dataJadwal = JSON.parse(data);
   const tbody = document.querySelector("#tabel-jadwal tbody");
   tbody.innerHTML = "";
 
@@ -79,6 +84,7 @@ function displayDataJadwal() {
 }
 function hapusDataJadwal(index) {
   dataJadwal.splice(index, 1);
+  localStorage.setItem("dataJadwal", JSON.stringify(dataJadwal));
   displayDataJadwal();
 }
 
@@ -128,8 +134,3 @@ function simpanDataJadwal() {
   localStorage.setItem("dataJadwal", JSON.stringify(dataJadwal));
 }
 displayDataJadwal();
-const dataJadwalLocalStorage = localStorage.getItem("dataJadwal");
-
-if (dataJadwalLocalStorage) {
-  dataJadwal = JSON.parse(dataJadwalLocalStorage);
-}
