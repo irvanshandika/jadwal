@@ -1,3 +1,16 @@
+@media only screen and (max-width: 768px) {
+  /* .container {
+    max-width: 100% !important;
+    margin-right: 2000% !important;
+  } */
+  table {
+    width: 100% !important;
+  }
+  .jadwal {
+    width: 77% !important;
+  }
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -39,7 +52,7 @@ button.dark {
 table {
   border-collapse: collapse;
   width: 100%;
-  max-width: 800px;
+  width: 600px;
   margin: auto;
   background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -52,6 +65,7 @@ table {
   display: inline-block;
   width: 3.5em;
   height: 2em;
+  margin-bottom: 1rem;
 }
 
 /* Hide default HTML checkbox */
@@ -136,7 +150,7 @@ tr:nth-child(even) {
 /* Form */
 .jadwal {
   margin: 0 auto;
-  width: 50%;
+  width: 570px;
   color: black;
   background-color: #fff;
   border-radius: 5px;
@@ -194,6 +208,16 @@ tr:nth-child(even) {
   background-color: #c62828;
   transition: all 0.3s ease;
 }
+/* Dropdown */
+.dropdown {
+  height: 30px;
+  width: 90px;
+  border-radius: 5px;
+}
+option {
+  font-size: 15px;
+}
+/* Form */
 /* Tabel */
 .tabel {
   border-collapse: collapse;
